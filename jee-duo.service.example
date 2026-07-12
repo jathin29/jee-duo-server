@@ -1,0 +1,14 @@
+[Unit]
+Description=JEE Duo study tracker
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/jee-duo
+ExecStart=/usr/bin/node server.js
+EnvironmentFile=/opt/jee-duo/.env
+Restart=on-failure
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
